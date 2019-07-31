@@ -36,6 +36,7 @@ export class LoginComponent implements OnInit {
         }
           this.ls.addLoginData(newLogin)
           .subscribe((result:any) => {
+            // this is for Jwt-header token (Sets the token) which is accessed in interceptors.ts
             if (result && result.accessToken) {
               localStorage.setItem("token",result.accessToken);
             }
