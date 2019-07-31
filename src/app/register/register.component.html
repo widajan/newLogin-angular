@@ -2,7 +2,7 @@
 
 <div class="card">
     <div class="card-body">
-        <form [formGroup]="formData" (ngSubmit)="submitRegistration()">
+        <form *ngIf="formData" [formGroup]="formData" (ngSubmit)="submitRegistration()">
             
             <div class="form-group">
                 <label class="col-md-4">Full Name: </label>

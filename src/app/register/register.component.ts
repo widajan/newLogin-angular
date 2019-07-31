@@ -29,8 +29,8 @@ export class RegisterComponent implements OnInit {
     }
 
     submitRegistration(){
-      console.log(this.formData.value, "Add Registration Form");
-      let newData: Register = {
+      // console.log(this.formData.value, "Add Registration Form");
+      let newData:  Register = {
         name: this.formData.controls.name.value,
         email: this.formData.controls.email.value,
         password: this.formData.controls.password.value
@@ -38,13 +38,15 @@ export class RegisterComponent implements OnInit {
       
       this.rs.registratoinAdd(newData)
       .subscribe(result => {
-        this.router.navigate(['/register/list'])
+        // this.router.navigate(['/register/list'])
+        console.log(result)
       }, error => {
         console.log(error, "Error adding");
       })
       
       }
   ngOnInit() {
+    this.addRegister();
   }
 
 }
